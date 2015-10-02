@@ -1,15 +1,29 @@
 <!DOCTYPE html>
  <html> 
-   <head> 
-    <title>Заголовок страницы</title> 
+   <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+    <title>Knowing which Block to Customize</title> 
+	<link rel="stylesheet" href="style.css" type="text/css" />
    </head> 
   <body> 
-   <div id='header' style="height: 200px; ">
-     <a href="http://ссылка на сайт.ru"><img src="bird.png" alt="header">Шапка сайта. Добро пожаловать на мой сайт</a>
-    </div> 
-     <div id='content' style="height: 300px; font-size: 12pt; border: 1px solid #999; background-color: #B0E0E6;" >
-      <p>Здесь может быть абсолютно любая информация.</p>
-     </div> 
-      <div id='footer'>Нижняя часть сайта</div> 
+     <div>
+       <h1>Knowing which Block to Customize</h1>
+
+        <p>In this example, the customized fragment name is <span>integer_widget</span> because you want to override
+           the HTML <span>widget</span> for all <span>integer</span> field types. If you need to customize <span>textarea</span> fields,
+           you would customize <span>textarea_widget</span>.</p>
+
+        <p>As you can see, the fragment name is a combination of the field type and which part of the field is being rendered
+           (e.g. <span>widget, label, errors,</span> row). As such, to customize how errors are rendered for just input <span>text</span> fields,
+            you should customize the <span>text_errors</span> fragment.</p>
+
+        <p>More commonly, however, you'll want to customize how errors are displayed across all fields.
+		   You can do this by customizing the <span>form_errors</span> fragment. This takes advantage of field type inheritance.
+		   Specifically, since the <span>text</span> type extends from the <span>form</span> type, the Form component will first look for the type-specific fragment
+		   (e.g. <span>text_errors</span>) before falling back to its parent fragment name if it doesn't exist (e.g. <span>form_errors</span>).</p>
+
+        <p>For more information on this topic, see <a href="http://symfony.com/doc/current/book/forms.html#form-template-blocks">Form Fragment Naming</a>.</p>
+		<img src="images/koala.jpg" alt="koala" />
+    </div>
   </body> 
  </html> 
